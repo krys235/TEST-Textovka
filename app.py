@@ -15,7 +15,7 @@ def load_model():
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("merged_prepared_with_fulltext.csv")
+    df = pd.read_csv("merged_with_embeddings.csv")
 
     def parse_list(col):
         return col.apply(
@@ -144,3 +144,4 @@ if st.button("Recommend") and user_query.strip():
                 st.write(f"**Metacritic:** {row['metacritic_score']}")
                 st.write(row["short_description"])
                 st.markdown("---")
+
